@@ -3,5 +3,7 @@
 
 class main
 {
-
+    public function index(){
+        echo "tt";
+    }
 }

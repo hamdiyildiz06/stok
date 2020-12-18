@@ -9,4 +9,10 @@ class uyeler
     public function listele(){
         echo "uyeler listesi burada olacak";
     }
+
+    public function goruntule($id,$salla){
+        echo $id . " burası görüntüle " . $salla;
+    }
+
+
 }
