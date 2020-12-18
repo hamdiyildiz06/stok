@@ -1,9 +1,9 @@
 <?php
 
 
-class main
+class main extends controller
 {
     public function index(){
-        echo "tt";
+        $this->render("uyeler/index", ["adi" => "hamdi","soyadi"=>"yıldız" ]);
     }
 }
