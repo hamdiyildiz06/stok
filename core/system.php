@@ -1,7 +1,6 @@
 <?php
 class system
 {
-    protected $controllerPath = "Application/controllers";
     protected $controller;
     protected $method;
     public function __construct()
@@ -17,12 +16,12 @@ class system
             $url[1] = $this->method;
         }
     /* controller Bulma */
-        if (file_exists($this->controllerPath."/".$url[0].".php")){
+        if (file_exists(CONTROLLERS_PATH."/".$url[0].".php")){
             $this->controller = $url[0];
             array_shift($url);
         }
 
-        require_once $this->controllerPath."/".$this->controller.".php";
+        require_once CONTROLLERS_PATH."/".$this->controller.".php";
         if (class_exists($this->controller)){
             $this->controller = new $this->controller;
         }else{
