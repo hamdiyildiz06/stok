@@ -4,7 +4,6 @@
 class main extends controller
 {
     public function index(){
-        $this->model("uye");
-        $this->render("uyeler/index", ["adi" => "hamdi","soyadi"=>"yıldız" ]);
+        $this->render("index", ["adi" => "hamdi","soyadi"=>"yıldız" ]);
     }
 }

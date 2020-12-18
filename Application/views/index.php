@@ -1,1 +1,3 @@
-tamam sanırım bu sefer oldu
+<?php
+
+echo $soyadi;
