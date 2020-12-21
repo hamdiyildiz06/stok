@@ -17,7 +17,7 @@ class sessionManager extends model
 
     public function isLogged(){
         if (isset($_SESSION['email']) and  isset($_SESSION['password'])){
-            $sorgu = $this->db->query("select * from uyeler where email= ? and password = ?");
+            $sorgu = $this->db->prepare("select * from uyeler where email= ? and password = ?");
             $sorgu->execute(array($_SESSION['email'],$_SESSION['password']));
             if ($sorgu->rowCount() != 0){
                 return true;
@@ -29,7 +29,7 @@ class sessionManager extends model
 
     public function getUserInfo(){
         if ($this->isLogged()){
-            $sorgu = $this->db->query("select * from uyeler where email = ?  and password = ?");
+            $sorgu = $this->db->prepare("select * from uyeler where email = ?  and password = ?");
             $sorgu->execute(array($_SESSION['email'],$_SESSION['password']));
             return $sorgu->fetch(PDO::FETCH_ASSOC);
         }

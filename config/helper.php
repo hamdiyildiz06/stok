@@ -18,4 +18,8 @@ class helper
         $text = trim($text);
         return $text;
     }
+
+    static function flashData($key,$value){
+        $_SESSION[$key] = $value;
+    }
 }
