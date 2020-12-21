@@ -1,6 +1,12 @@
 <?php
 class controller
 {
+    public $sessionManager;
+    public function __construct()
+    {
+        $this->sessionManager = new sessionManager();
+    }
+
     public function render($file, $param = []){
         return view::render($file, $param);
     }
